@@ -1,0 +1,16 @@
+#Para comenzar se debe instalar las librerias de diseño (en este caso bootstrap 4)
+#Para ello tendremos que utilizar los sig. comandos 
+    -composer require laravel/ui
+    -php artisan ui bootstrap
+    -npm install
+    -npm run dev
+
+#Para lanzar el servidor y mostrar lo de laravel
+    -php artisan serve
+
+#Migrate, seeder, factory, Model, controller
+    #crear modelo (-m = migration,  c = controller )
+        php artisan make:model nombreProducto -mc
+    
+    #crear el seeder (datos semillas de tus tablas de bd), el nombre debe estar escrito en plural
+        php artisan make:seeder namesTableSeeder
