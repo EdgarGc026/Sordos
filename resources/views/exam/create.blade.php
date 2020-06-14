@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Crear examen</title>
 </head>
+
 <body>
     <div class="container">
         <div class="row justify-content-center">
@@ -17,7 +18,7 @@
                 <div class="card">
                     <div class="card-header">
                         <span>Crear examen</span>
-                        <a href="/exams/" class="btn btn-secondary btn-sm float-right">Regresar</a>
+                        <a href="/exams/" class="btn btn-secondary btn-sm float-right" onclick="return confirm('Tus datos se perderan ¿Deseas regresar a la pagina principal?')">Regresar</a>
                     </div>
                         <div class="card-body">
                             @if($errors->any())

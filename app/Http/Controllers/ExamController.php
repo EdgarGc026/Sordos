@@ -82,7 +82,7 @@ class ExamController extends Controller{
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id){
+    public function update(StoreExamRequest $request, $id){
         // dd('put update');
 
         $exam = Exam::findOrFail($id);

@@ -31,7 +31,7 @@
                                 @Csrf
                                 @method('delete')
 
-                                <button type="submit" class="btn btn-danger">Eliminar examen</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('¿En verdad deseas eliminarlo?')">Eliminar examen</button>
                             </form>
                         </div>
                     </div>
