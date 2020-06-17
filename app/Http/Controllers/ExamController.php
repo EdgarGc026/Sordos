@@ -8,6 +8,10 @@ use App\Http\Requests\StoreExamRequest;
 
 class ExamController extends Controller{
 
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listening of the resource.
      * 
@@ -36,14 +40,15 @@ class ExamController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function store(StoreExamRequest $request){
-         
+        /*         
         $exam = new Exam;
         $exam->title = $request->get('title');
         $exam->description = $request->get('description');
-        $exam->code = $request->get('code');
-        $exam->save();  
+        $exam->code = $request->get('code'); 
+        $exam->save();  */
         
-        return redirect('/exams');
+         Exam::create($request->all());
+         return redirect('/exams');
     }
 
     /**
@@ -53,7 +58,7 @@ class ExamController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function show($id){
-        /* return view('exam.index'); */
+        
     }
 
     /**
@@ -78,8 +83,7 @@ class ExamController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function update(StoreExamRequest $request, $id){
-        // dd('put update');
-
+        
         $exam = Exam::findOrFail($id);
         $exam->title = $request->get('title');
         $exam->description = $request->get('description');
@@ -109,9 +113,3 @@ class ExamController extends Controller{
        ]);
     }
 }
-
-
-/**Create from User and Exam id.
- * $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
- * $table->foreignId('exam_id')->references('id')->on('exams')->onDelete('cascade'); 
-*/
