@@ -36,20 +36,14 @@ class ExamController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function store(StoreExamRequest $request){
-
-/*         
-        $exam = new Exam();
+         
+        $exam = new Exam;
         $exam->title = $request->get('title');
         $exam->description = $request->get('description');
         $exam->code = $request->get('code');
-        $exam->save(); */
-
-        // return redirect('/exams');
-
-        // $data['user_id] = auth()->user()->id;
-        $exam = Exam::create(); 
-
-        // return redirect('/examenes/'.$exam->id);
+        $exam->save();  
+        
+        return redirect('/exams');
     }
 
     /**
@@ -59,7 +53,7 @@ class ExamController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function show($id){
-        
+        /* return view('exam.index'); */
     }
 
     /**

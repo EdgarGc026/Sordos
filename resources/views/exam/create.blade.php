@@ -19,10 +19,11 @@
 
                 <form action="/exams" method="POST">
                     @CSRF
-                
+
+                    <input hidden name="user_id" value="{{ auth()->user()->id }}">
                     <div class="form-group">
                         <label for="title">Titulo del examen</label>
-                        <input name="title" type="text" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Inserta el titulo"  value="{{ old('title') }}" required>
+                        <input name="title" type="text" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Inserta el titulo"  value="{{ old('title') }}" >
                         <small id="titleHelp" class="form-text text-muted">Escribe el nombre que deseas ponerle al examen.</small>
                     
                        
@@ -36,7 +37,7 @@
 
                     <div class="form-group">
                         <label for="description">Descripcion del examen</label>
-                        <input name="description" type="text" class="form-control" id="description" aria-describedby="descriptionHelp" placeholder="Inserte la descripcion"  value="{{ old('description') }}" required>
+                        <input name="description" type="text" class="form-control" id="description" aria-describedby="descriptionHelp" placeholder="Inserte la descripcion"  value="{{ old('description') }}" >
                         <small id="descriptionHelp" class="form-text text-muted">Ingresa la descripcion que deseas ponerle al examen.</small>
                                                             
                         @if($errors->has('description'))
@@ -48,7 +49,7 @@
 
                     <div class="form-group">
                         <label for="code">Codigo del examen</label>
-                        <input name="code" type="text" class="form-control" id="code" aria-describedby="codeHelp" placeholder="Inserte el codigo"  value="{{ old('code') }}" required>
+                        <input name="code" type="text" class="form-control" id="code" aria-describedby="codeHelp" placeholder="Inserte el codigo"  value="{{ old('code') }}" >
                         <small id="codeHelp" class="form-text text-muted">Ingresa el codigo que deseas ponerle al examen.</small>
                         
                         @if($errors->has('code'))

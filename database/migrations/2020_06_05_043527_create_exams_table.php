@@ -20,6 +20,7 @@ class CreateExamsTable extends Migration
             /* $table->time('H:i:s'); */
             /* $table->integer('score'); */
             $table->string('code');
+            
             $table->timestamps();
         });
     }

@@ -11,17 +11,14 @@ class Exam extends Model{
         * 1 usuario puede tener muchos examenes
     */
 
-    /* protected $guarded = []; */
+    protected $guarded = [];
 
-    /* protected $fillable = [
-        'title', 'description', 'code'
-    ]; */
-
-    // public function user(){
-    //     return $this->belongsTo(User::class);
-    // }
+     protected $fillable = [
+        'title', 'description', 'code', 'user_id'
+    ];
 
     public function user(){
+
         return $this->belongsTo(User::class);
     }
 }
