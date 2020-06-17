@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/exams', 'ExamController');
 Route::get('/exams/{id}/confirmDelete', 'ExamController@confirmDelete');
+Route::get('exams/{exam}', 'ExamController@show');
 
 
 // Route::resource('/questions/{id}', 'QuestionController');
@@ -26,4 +27,7 @@ Route::get('/',  function (){
     return view('welcome');
 });
 
+// Controladores para Exam, las rutas y lo que hace cada una
 Route::get('/home', 'HomeController@index')->name('home');
+
+

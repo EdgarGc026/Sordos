@@ -30,7 +30,7 @@
                                 <td>{{$exam->description}}</td>
                                 <td>{{$exam->code}}</td>
                                 <td>
-                                    <a href="/questions/add" class="btn btn-success btn-sm" title="Agregar preguntas"><i class="fas fa-plus-square"></i></a>
+                                    <a href="/exams/{{$exam->id}}" class="btn btn-success btn-sm" title="Abrir examen"><i class="fas fa-plus-square"></i></a>
                                     <a href="/exams/{{$exam->id}}/edit" class="btn btn-warning btn-sm" title="Editar"><i class="far fa-edit"></i></a>
                                     <a href="/exams/{{$exam->id}}/confirmDelete" class="btn btn-danger btn-sm" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
                                 </td>

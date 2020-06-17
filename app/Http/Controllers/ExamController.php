@@ -39,13 +39,16 @@ class ExamController extends Controller{
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(StoreExamRequest $request){
         /*         
         $exam = new Exam;
         $exam->title = $request->get('title');
         $exam->description = $request->get('description');
         $exam->code = $request->get('code'); 
-        $exam->save();  */
+        $exam->save();  
+        $user = auth()->user()->exams()->create($exam);
+        */
         
          Exam::create($request->all());
          return redirect('/exams');
@@ -57,8 +60,9 @@ class ExamController extends Controller{
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id){
-        
+    public function show(Exam $exam){
+
+        return view('exam.show', compact(['exam']));
     }
 
     /**
