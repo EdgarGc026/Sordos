@@ -18,7 +18,7 @@ Route::resource('/exams', 'ExamController');
 Route::get('/exams/{id}/confirmDelete', 'ExamController@confirmDelete');
 
 
-Route::resource('/questions/{id}', 'QuestionController');
+// Route::resource('/questions/{id}', 'QuestionController');
 
 Auth::routes();
 
