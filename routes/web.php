@@ -15,9 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource('/exams', 'ExamController');
-
 Route::get('/exams/{id}/confirmDelete', 'ExamController@confirmDelete');
 
-// 
-// Route::get('/examen/crear', 'ExamController@createExam');
-// Route::post('/examen', 'ExamController@store');
+
+Route::resource('/questions/{id}', 'QuestionController');
+
+Auth::routes();
+
+Route::get('/',  function (){
+    return view('welcome');
+});
+
+Route::get('/home', 'HomeController@index')->name('home');

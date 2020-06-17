@@ -37,16 +37,17 @@ class ExamController extends Controller{
      */
     public function store(StoreExamRequest $request){
 
+/*         
         $exam = new Exam();
         $exam->title = $request->get('title');
         $exam->description = $request->get('description');
         $exam->code = $request->get('code');
-        $exam->save();
+        $exam->save(); */
 
-        return redirect('/exams');
+        // return redirect('/exams');
 
         // $data['user_id] = auth()->user()->id;
-        // $exam = Exam::create($data);
+        $exam = Exam::create(); 
 
         // return redirect('/examenes/'.$exam->id);
     }
@@ -114,3 +115,9 @@ class ExamController extends Controller{
        ]);
     }
 }
+
+
+/**Create from User and Exam id.
+ * $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+ * $table->foreignId('exam_id')->references('id')->on('exams')->onDelete('cascade'); 
+*/
