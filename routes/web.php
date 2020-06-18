@@ -18,8 +18,10 @@ Route::resource('/exams', 'ExamController');
 Route::get('/exams/{id}/confirmDelete', 'ExamController@confirmDelete');
 Route::get('exams/{exam}', 'ExamController@show');
 
+Route::resource('/questions', 'QuestionController');
+Route::get('/exams/{exam}/questions/create', 'QuestionController@create');
+Route::post('/exams/{exam}/questions', 'QuestionController@store');
 
-// Route::resource('/questions/{id}', 'QuestionController');
 
 Auth::routes();
 
@@ -29,5 +31,3 @@ Route::get('/',  function (){
 
 // Controladores para Exam, las rutas y lo que hace cada una
 Route::get('/home', 'HomeController@index')->name('home');
-
-

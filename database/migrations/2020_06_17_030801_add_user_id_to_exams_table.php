@@ -11,8 +11,7 @@ class AddUserIdToExamsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up(){
         Schema::table('exams', function (Blueprint $table) {
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -25,10 +24,9 @@ class AddUserIdToExamsTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down(){
         Schema::table('exams', function (Blueprint $table) {
-            //
+        
         });
     }
 }

@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="card-body">
-                                   
+                    <a href="/exams/{{$exam->id}}/questions/create" class="btn btn-dark" title="Agregar nueva pregunta">Agregar nueva pregunta</a>
                 </div>
             </div>
         </div>

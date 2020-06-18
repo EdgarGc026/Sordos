@@ -6,10 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model{
     
-    /* protected $guarded = []; */
+    
 
-/*     protected $fillable = [
-        'question', 'iframe', 'images'
+    protected $fillable = [
+        'description', 'exam_id'
     ];
-*/
+
+    protected $guarded = [];
+
+    public function Exam(){
+        return $this->belongsTo(Exam::class);
+    }
+
+    public function answers(){
+        return $this->hasMany(Answer::class);
+    }
+
 } 
