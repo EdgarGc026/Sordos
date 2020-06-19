@@ -61,7 +61,9 @@ class ExamController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function show(Exam $exam){
+        
 
+        $exam->load('questions.answers');
         return view('exam.show', compact(['exam']));
     }
 

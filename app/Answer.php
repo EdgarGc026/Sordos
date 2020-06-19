@@ -1,13 +1,11 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
-class Answer extends Model{
-    
+class Answer extends Model{    
     protected $fillable = [
-        'description', 'question_id'
+        'description', 'iframe', 'question_id'
     ];
 
     protected $guarded = [];

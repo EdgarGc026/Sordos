@@ -1,15 +1,10 @@
 <?php
-
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model{
-    
-    
-
     protected $fillable = [
-        'description', 'exam_id'
+        'description', 'iframe', 'image' ,'exam_id'
     ];
 
     protected $guarded = [];
@@ -21,5 +16,4 @@ class Question extends Model{
     public function answers(){
         return $this->hasMany(Answer::class);
     }
-
 } 
