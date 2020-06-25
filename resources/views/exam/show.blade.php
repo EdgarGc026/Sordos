@@ -44,9 +44,11 @@
             </div>
 
         @foreach ($exam->questions as $question)
+            @if ($question->id and $question->description)
             <div class="card border">
-                <div class="card-body text-justify">{{$question->id}}.-  ¿{{$question->description}}</div>
+                <div class="card-body text-justify">{{$question->id}}.- {{$question->description}}</div>
             </div>
+            @endif
         @endforeach
         </div>
     </div>
@@ -54,16 +56,17 @@
     <div class="row">
         <div class="col">
             <div class="row">
-
                 <div class="col-3"></div>
 
                 <div class="col-6">
                     @foreach ($exam->questions as $question)
                     <div class="card mt-1">
                         <div class="card-body">
+                            @if ($question->iframe)
                             <div class="embed embed-responsive embed-responsive-16by9">
                                 {{!! $question->iframe !!}}
                             </div>
+                            @endif
                         </div>
                     </div>
                     @endforeach
@@ -75,98 +78,33 @@
     <div class="row mt-2">
         <div class="col-12">
             <div class="row">
+                @foreach ($question->answers as $answer) 
                 <div class="col-6">
-                    {{-- Aqui debe ir un foreach --}}
-                    <div class="card">
+                    <div class="card mb-2">
                         <div class="row justify-content-center align-items-center">
                             <div class="col-7">
-                                <div class="form-check form-check form-check-inline mb-1 ml-1">
+                                <div class="form-check form-check form-check-inline  ml-1">
                                     <input class="form-check" id="OpcionD" name="OpcionA" value="" type="radio">
-                                    <label class="form-check-label ml-1" for="OpcionD">Answer A</label>
+                                    <label class="form-check-label ml-1" for="OpcionD">Respuestas</label>
                                 </div>
+
+                                @if ($answer->iframe)
                                 <div class="embed embed-responsive embed-responsive-1by1 mt-1">
-                                    {{-- Aqui debe ir el iframe desde un foreach --}}
+                                    {{!! $answer->iframe !!}}
                                 </div>
+                                @endif
                             </div>
-
-                            <div class="col col-5 text-center">
-                               {{-- Aqui debe ir la imagen desde un foreach --}}
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-7">
-                                <div class="form-check form-check form-check-inline mb-1 ml-1">
-                                    <input class="form-check" id="OpcionD" name="OpcionA" value="" type="radio">
-                                    <label class="form-check-label ml-1" for="OpcionD">Answer A</label>
-                                </div>
-
-                                <div class="embed embed-responsive embed-responsive-1by1 mt-1">
-                                    {{-- Aqui va un foreach para obtener el iframe --}}
-                                </div>
-                            </div>
-
+                            
                             <div class="col-5 text-center">
-                                {{-- Aqui va un foreache para obtener la image, esta es opcional --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="row mt-2">
-        <div class="col-12">
-            <div class="row">
-                <div class="col-6">
-                    {{-- Aqui debe ir un foreach --}}
-                    <div class="card">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-7">
-                                <div class="form-check form-check form-check-inline mb-1 ml-1">
-                                    <input class="form-check" id="OpcionD" name="OpcionA" value="" type="radio">
-                                    <label class="form-check-label ml-1" for="OpcionD">Answer A</label>
-                                </div>
-                                <div class="embed embed-responsive embed-responsive-1by1 mt-1">
-                                    {{-- Aqui debe ir el iframe desde un foreach --}}
-                                </div>
-                            </div>
 
-                            <div class="col col-5 text-center">
-                               {{-- Aqui debe ir la imagen desde un foreach --}}
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="card">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-7">
-                                <div class="form-check form-check form-check-inline mb-1 ml-1">
-                                    <input class="form-check" id="OpcionD" name="OpcionA" value="" type="radio">
-                                    <label class="form-check-label ml-1" for="OpcionD">Answer A</label>
-                                </div>
-
-                                <div class="embed embed-responsive embed-responsive-1by1 mt-1">
-                                    {{-- Aqui va un foreach para obtener el iframe --}}
-                                </div>
-                            </div>
-
-                            <div class="col-5 text-center">
-                                {{-- Aqui va un foreache para obtener la image, esta es opcional --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
 
-</div>
 @endsection
